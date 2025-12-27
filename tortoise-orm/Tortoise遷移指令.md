@@ -1,0 +1,12 @@
+- 初始化
+  - aerich init -t main.TORTOISE_ORM
+- 第一次初始化 DB + migration 環境
+  - aerich init-db
+- 當模型發生變更時，執行以下指令來產生遷移檔案
+  - aerich migrate --name "修改紀錄..."
+- 套用遷移，將 model 變更同步到資料庫
+  - aerich upgrade
+- 若要回復到先前的某個版本，可以使用 downgrade 指令
+  - aerich downgrade <版本號>
+- 查詢歷史遷移
+  - aerich history
