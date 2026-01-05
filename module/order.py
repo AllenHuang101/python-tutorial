@@ -13,4 +13,6 @@ def cancel_order():
 def show_info():
     print('我是來自【訂單】模組的提示！')
 
-# __all__ = ('cancel_order', 'show_info')
+# from order import * 時，只能匯入以下兩個內容 
+# __all__ 只能限制 from 模組名稱 import * 的行為，對其他匯入方式無效
+# __all__ = ['cancel_order', 'show_info']

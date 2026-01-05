@@ -1,16 +1,20 @@
-# 订单最大金额
+# 訂單最大金額
 max_order_amount = 1000000
 
-# 创建订单
+
+# 建立訂單
 def create_order():
-    print('订单创建成功！')
+    print("訂單建立成功！")
 
-# 关闭订单
+
+# 關閉訂單
 def cancel_order():
-    print('订单关闭成功！')
+    print("訂單關閉成功！")
 
-# 提示函数
+
+# 提示函式
 def show_info():
-    print('我是来自【订单】模块的提示！')
+    print("我是來自【訂單】模組的提示！")
+
 
 # __all__ = ('create_order', 'cancel_order')

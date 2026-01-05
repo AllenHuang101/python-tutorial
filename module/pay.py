@@ -1,3 +1,7 @@
+from colorama import Fore, init
+
+init(autoreset=True)  
+
 # 支付逾時時間
 timeout = 1800
 
@@ -13,7 +17,7 @@ def ali_pay():
 def show_info():
     print('我是來自【支付】模組的提示！')
 
-# print('我是pay模組列印的內容', __name__)
+print(Fore.YELLOW + '我是pay模組列印的內容', __name__)
 
 # 測試程式碼
 if __name__ == '__main__':
