@@ -21,17 +21,14 @@ age = 21
 
 # 條件表達式的使用場景：簡單的二選一場景
 rain = True
-eat = '外賣' if rain else '出去吃'
+eat = "外賣" if rain else "出去吃"
 
 is_vip = False
 disscount = 0.8 if is_vip else 1.0
 
 is_login = False
-msg = '歡迎回來！' if is_login else print('哈哈哈')
+msg = "歡迎回來！" if is_login else print("哈哈哈")
 
 print(eat)
 print(disscount)
 print(msg)
-
-
-
