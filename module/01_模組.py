@@ -14,12 +14,12 @@
 
 from colorama import Fore, init
 
-init(autoreset=True)  
+init(autoreset=True)
 
 
 # 常見的模組匯入方式：
 # 1️⃣import 模組名稱
-print(Fore.GREEN + '使用 import 模組名稱 的方式匯入模組')
+print(Fore.GREEN + "使用 import 模組名稱 的方式匯入模組")
 
 import order
 import pay
@@ -28,7 +28,7 @@ print(order.max_order_amount)
 order.create_order()
 order.cancel_order()
 order.show_info()
-print('*' * 10)
+print("*" * 10)
 print(pay.timeout)
 pay.wechat_pay()
 pay.ali_pay()
@@ -36,7 +36,7 @@ pay.show_info()
 
 
 # 2️⃣import 模組名稱 as 別名
-print(Fore.GREEN + '使用 import 模組名稱 as 別名 的方式匯入模組')
+print(Fore.GREEN + "使用 import 模組名稱 as 別名 的方式匯入模組")
 
 
 import order as dd
@@ -46,7 +46,7 @@ print(dd.max_order_amount)
 dd.create_order()
 dd.cancel_order()
 dd.show_info()
-print('*' * 10)
+print("*" * 10)
 print(zf.timeout)
 zf.wechat_pay()
 zf.ali_pay()
@@ -54,7 +54,9 @@ zf.show_info()
 
 # 只想用模塊裡面的一部份內容
 # 3️⃣from 模組名稱 import 具體內容1, 具體內容2, ......
-print(Fore.GREEN + '使用 from 模組名稱 import 具體內容1, 具體內容2, ...... 的方式匯入模組')
+print(
+    Fore.GREEN + "使用 from 模組名稱 import 具體內容1, 具體內容2, ...... 的方式匯入模組"
+)
 
 from order import max_order_amount, show_info
 from pay import wechat_pay, ali_pay
@@ -66,10 +68,14 @@ ali_pay()
 
 
 # 4️⃣from 模組名稱 import 具體內容1 as 別名1, 具體內容2 as 別名2, ......
-print(Fore.GREEN + '使用 from 模組名稱 import 具體內容1 as 別名1, 具體內容2 as 別名2, ...... 的方式匯入模組')
+print(
+    Fore.GREEN
+    + "使用 from 模組名稱 import 具體內容1 as 別名1, 具體內容2 as 別名2, ...... 的方式匯入模組"
+)
 
 from order import max_order_amount as max_amt, show_info as show1
 from pay import timeout as tm, show_info as show2
+
 print(max_amt)
 print(tm)
 show1()
@@ -77,7 +83,7 @@ show2()
 
 
 # 5️⃣from 模組名稱 import * (容易造成命名汙染，不建議使用!!!)
-print(Fore.GREEN + '使用 from 模組名稱 import * 的方式匯入模組')
+print(Fore.GREEN + "使用 from 模組名稱 import * 的方式匯入模組")
 
 from order import *
 from pay import *

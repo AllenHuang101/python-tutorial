@@ -19,74 +19,74 @@ from colorama import Fore, init
 init(autoreset=True)
 
 # 1️⃣import 包名.模組名稱
-# print(Fore.GREEN + "使用 import 包名.模組名稱 的方式匯入模組")
-# import trade.order
-# import trade.pay
+print(Fore.GREEN + "使用 import 包名.模組名稱 的方式匯入模組")
+import trade.order
+import trade.pay
 
-# trade.order.create_order()
-# trade.pay.wechat_pay()
+trade.order.create_order()
+trade.pay.wechat_pay()
 
 # 2️⃣import 包名.模組名稱 as 別名
-# print(Fore.GREEN + "使用 import 包名.模組名稱 as 別名 的方式匯入模組")
-# import trade.order as dd
-# import trade.pay as zf
+print(Fore.GREEN + "使用 import 包名.模組名稱 as 別名 的方式匯入模組")
+import trade.order as dd
+import trade.pay as zf
 
-# dd.create_order()
-# zf.wechat_pay()
+dd.create_order()
+zf.wechat_pay()
 
 
 # 3️⃣from 包名.模組名稱 import 具體內容1, 具體內容2, ......
-# print(
-#     Fore.GREEN + "from 包名.模組名稱 import 具體內容1, 具體內容2, ...... 的方式匯入模組"
-# )
-# from trade.order import max_order_amount, create_order
-# from trade.pay import timeout, wechat_pay
+print(
+    Fore.GREEN + "from 包名.模組名稱 import 具體內容1, 具體內容2, ...... 的方式匯入模組"
+)
+from trade.order import max_order_amount, create_order
+from trade.pay import timeout, wechat_pay
 
-# print(max_order_amount)
-# print(timeout)
-# create_order()
-# wechat_pay()
+print(max_order_amount)
+print(timeout)
+create_order()
+wechat_pay()
 
 
 # 4️⃣from 包名.模組名稱 import 具體內容1 as 別名1, 具體內容2 as 別名2, ......
-# print(
-#     Fore.GREEN
-#     + "from from 包名.模組名稱 import 具體內容1 as 別名1, 具體內容2 as 別名2, ...... 的方式匯入模組"
-# )
-# from trade.order import max_order_amount as max_amt, create_order
-# from trade.pay import timeout, wechat_pay as w_pay
+print(
+    Fore.GREEN
+    + "from from 包名.模組名稱 import 具體內容1 as 別名1, 具體內容2 as 別名2, ...... 的方式匯入模組"
+)
+from trade.order import max_order_amount as max_amt, create_order
+from trade.pay import timeout, wechat_pay as w_pay
 
-# print(max_amt)
-# print(timeout)
-# create_order()
-# w_pay()
+print(max_amt)
+print(timeout)
+create_order()
+w_pay()
 
 
 # 5️⃣from 包名.模組名稱 import *
-# print(Fore.GREEN + "from 包名.模組名稱 import * 的方式匯入模組")
-# from trade.order import *
-# from trade.pay import *
+print(Fore.GREEN + "from 包名.模組名稱 import * 的方式匯入模組")
+from trade.order import *
+from trade.pay import *
 
-# print(max_order_amount)
-# create_order()
-# cancel_order()
-# show_info()
+print(max_order_amount)
+create_order()
+cancel_order()
+show_info()
 
-# print(timeout)
-# wechat_pay()
-# ali_pay()
-# show_info()
+print(timeout)
+wechat_pay()
+ali_pay()
+show_info()
 
 # 6️⃣from 包名 import 模組名稱
-# print(Fore.GREEN + "from 包名 import 模組名稱 的方式匯入模組")
-# from trade import order, pay
+print(Fore.GREEN + "from 包名 import 模組名稱 的方式匯入模組")
+from trade import order, pay
 
-# order.create_order()
-# pay.wechat_pay()
+order.create_order()
+pay.wechat_pay()
 
 # 7️⃣from 包名 import 模組名稱 as 別名
-# print(Fore.GREEN + "from 包名 import 模組名稱 as 別名 的方式匯入模組")
-# from trade import order as dd, pay as p
+print(Fore.GREEN + "from 包名 import 模組名稱 as 別名 的方式匯入模組")
+from trade import order as dd, pay as p
 
 # dd.create_order()
 # p.wechat_pay()
