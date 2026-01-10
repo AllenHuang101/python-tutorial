@@ -1,30 +1,35 @@
+from colorama import Fore, init
+
+init(autoreset=True)
+
 # 知識點1：能被 for 迴圈遍歷的物件，被稱為：可迭代物件 (iterable)
 # region
 # names = ["張三", "李四", "王五"]
 # citys = ("北京", "上海", "深圳")
 # msg = "hello"
 # age = 10
-#
-#
+
+
 # def test():
 #     pass
-#
-#
+
+
 # for item in age:
 #     print(item)
 # endregion
 
 
 # 知識點2：可迭代物件 (iterable) 能呼叫到 __iter__ 方法。
+print(f"{Fore.GREEN}---- 知識點2：可迭代物件 (iterable) 能呼叫到 __iter__ 方法 ----")
 # region
-# names = ["張三", "李四", "王五"]
-# citys = ("北京", "上海", "深圳")
-# msg = "hello"
-# age = 10
+names = ["張三", "李四", "王五"]
+citys = ("北京", "上海", "深圳")
+msg = "hello"
+age = 10
 
 
-# def test():
-#     pass
+def test():
+    pass
 
 
 # names.__iter__()
@@ -32,49 +37,51 @@
 # msg.__iter__()
 
 # 判斷是否為可迭代對象
-# print(hasattr(names, "__iter__"))
-# print(hasattr(citys, "__iter__"))
-# print(hasattr(msg, "__iter__"))
-# print(hasattr(age, "__iter__"))
-# print(hasattr(test, "__iter__"))
+print(hasattr(names, "__iter__"))
+print(hasattr(citys, "__iter__"))
+print(hasattr(msg, "__iter__"))
+print(hasattr(age, "__iter__"))
+print(hasattr(test, "__iter__"))
 # endregion
 
 
 # 知識點3：呼叫 __iter__ 方法會得到：迭代器 (iterator)
+print(f"{Fore.GREEN}---- 知識點3：呼叫 __iter__ 方法會得到：迭代器 (iterator) ----")
 # 備註1：__iter__ 是一個魔法方法，當呼叫 iter 函式時，__iter__ 會自動被呼叫。
 # 備註2：可迭代物件.__iter__() 等價於 iter(可迭代物件)。
 # 備註3：如果 iter(obj) 能得到一個迭代器 (iterator)，那 obj 就是可迭代物件。
 # region
-# names = ["張三", "李四", "王五"]
-# citys = ("北京", "上海", "深圳")
-# msg = "hello"
+names = ["張三", "李四", "王五"]
+citys = ("北京", "上海", "深圳")
+msg = "hello"
 
 # print(names.__iter__())
 # print(citys.__iter__())
 # print(msg.__iter__())
 
-# print(iter(names))
-# print(iter(citys))
-# print(iter(msg))
+print(iter(names))
+print(iter(citys))
+print(iter(msg))
 # endregion
 
 
+print(f"{Fore.GREEN}---- 知識點4：迭代器 (iterator) 擁有 __next__ 方法 ----")
 # 知識點4：迭代器 (iterator) 擁有 __next__ 方法，
 # 每次呼叫都會依據目前的狀態，回傳下一個元素。
 # 備註1：迭代器.__next__() 等價於 next(迭代器)。
 # 備註2：當所有元素都被取出後，若繼續呼叫 __next__ 方法，
 #         Python 會拋出 StopIteration 例外。
 # region
-# names = ["張三", "李四", "王五"]
-# it = iter(names)
+names = ["張三", "李四", "王五"]
+it = iter(names)
 # print(it.__next__())
 # print(it.__next__())
 # print(it.__next__())
 # print(it.__next__())
 
-# print(next(it))
-# print(next(it))
-# print(next(it))
+print(next(it))
+print(next(it))
+print(next(it))
 # print(next(it))
 # endregion
 
@@ -108,17 +115,17 @@ while True:
 # 讓 for 迴圈也能遍歷迭代器
 # （也就是：為了讓 iter(迭代器) 不會出錯）。
 # region
-# names = ['張三', '李四', '王五']
-#
+# names = ["張三", "李四", "王五"]
+
 # it = iter(names)
 # print(it)
-#
+
 # result = iter(it)
 # print(result)
-#
+
 # x = iter(result)
 # print(x)
-#
+
 # it = iter(names)
 # for item in it:
 #     print(item)

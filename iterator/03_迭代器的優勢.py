@@ -10,6 +10,7 @@ import tracemalloc
 
 
 # 使用迭代器實作
+# 產生 Fibonacci 1、 1、 2、 3、 5、 8、 13、 21、 34、 ...
 class Fibo:
     def __init__(self, total):
         # 要產生多少個數
@@ -56,16 +57,16 @@ def fibo(total):
 
 # 查看記憶體佔用
 tracemalloc.start()
-f1 = Fibo(100000)
+f1 = Fibo(200000)
 m = tracemalloc.get_traced_memory()[1]
 print(f"{Fore.GREEN}迭代器記憶體佔用是：{m / 1024 / 1024}MB")
 
 tracemalloc.start()
-f1 = fibo(100000)
+f1 = fibo(200000)
 m = tracemalloc.get_traced_memory()[1]
 print(f"{Fore.GREEN}非迭代器記憶體佔用是：{m / 1024 / 1024}MB")
 
-f1 = Fibo(100000)
+f1 = Fibo(200000)
 for n in f1:
     if n > 100:
         break
