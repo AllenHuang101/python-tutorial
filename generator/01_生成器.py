@@ -1,19 +1,27 @@
+from colorama import Fore, init
+
+init(autoreset=True)
+
+
 # 1️⃣ 生成器：
 #   1. 生成器函式：函式主體中如果出現了 yield 關鍵字，那該函式就是「生成器函式」。
 #   2. 生成器物件：呼叫「生成器函式」時，其函式主體不會立刻執行，而是回傳一個「生成器物件」。
 #   備註：不管能否執行到 yield 所在的位置，只要函式中有 yield 關鍵字，
 #        那該函式就是「生成器函式」。
 # region
-# def demo():
-#     print("demo 函式開始執行了")
-#     print(100)
-#     yield
-#     a = 200
-#     print(a)
+def demo():
+    print("demo 函式開始執行了")
+    print(100)
+    yield
+    a = 200
+    print(a)
 
 
-# d = demo()
-# print(d)
+print(f"{Fore.GREEN}生成器範例1")
+d = demo()
+print(d)
+next(d)
+# next(d)
 # endregion
 
 
@@ -27,45 +35,49 @@
 #      並將 return 後面的表達式作為例外資訊。
 #   5. yield 後面所寫的表達式，會作為本次 __next__ 方法的回傳值。
 # region
-# def demo():
-#     print("demo 函式開始執行了")
-#     print(100)
-#     yield "我是第 1 個 yield 所回傳的資料"
-#     a = 200
-#     print(a)
-#     yield "我是第 2 個 yield 所回傳的資料"
-#     b = 300
-#     print(b)
-#     return "尚矽谷"
+def demo2():
+    print("demo 函式開始執行了")
+    print(100)
+    yield "我是第 1 個 yield 所回傳的資料"
+    a = 200
+    print(a)
+    yield "我是第 2 個 yield 所回傳的資料"
+    b = 300
+    print(b)
+    return "尚矽谷"
 
 
-# d = demo()
-# r1 = next(d)
-# print(r1)
-# r2 = next(d)
-# print(r2)
-# try:
-#     next(d)
-# except StopIteration as e:
-#     print(e)
+print(f"{Fore.GREEN}生成器範例2")
+d = demo2()
+# r1、r2 分別接收每次 yield 所回傳的資料
+r1 = next(d)
+print(r1)
+r2 = next(d)
+print(r2)
+try:
+    next(d)
+except StopIteration as e:
+    print(e)
 # endregion
+
 
 # 3️⃣ 生成器物件是一種特殊的迭代器
 # （本質上是透過 yield 自動實作了迭代器協定）。
 # region
-# def demo():
-#     print("demo 函式開始執行了")
-#     print(100)
-#     yield "我是第 1 個 yield 所回傳的資料"
-#     a = 200
-#     print(a)
-#     yield "我是第 2 個 yield 所回傳的資料"
-#     b = 300
-#     print(b)
-#     return "尚矽谷"
+def demo3():
+    print("demo 函式開始執行了")
+    print(100)
+    yield "我是第 1 個 yield 所回傳的資料"
+    a = 200
+    print(a)
+    yield "我是第 2 個 yield 所回傳的資料"
+    b = 300
+    print(b)
+    return "尚矽谷"
 
 
-# d = demo()
+print(f"{Fore.GREEN}生成器範例3")
+d = demo3()
 # 驗證：生成器物件 d，和迭代器一樣，也擁有 __iter__ 和 __next__ 方法
 # print(hasattr(d, "__iter__"))
 # print(hasattr(d, "__next__"))
@@ -76,8 +88,8 @@
 # print(result == d)
 
 # for 迴圈遍歷生成器
-# for item in d:
-#     print(item)
+for index, item in enumerate(d):
+    print(index, item)
 
 # for 迴圈背後的邏輯
 # gen = iter(d)
@@ -89,51 +101,58 @@
 #         break
 # endregion
 
+
 # 4️⃣ yield 也可以寫在迴圈中
+print(f"{Fore.GREEN}生成器範例4")
+
+
 # region
-# def create_car(total):
-#     for index in range(1, total + 1):
-#         yield f'我是第 {index} 台車'
+def create_car(total):
+    for i in range(1, total + 1):
+        yield f"我是第 {i} 台車"
+
 
 # cars 是生成器物件
-# cars = create_car(5)
+cars = create_car(5)
 
 # 每呼叫一次 cars 的 __next__ 方法，就會得到一台車
-# c1 = next(cars)
-# print(c1)
-# c2 = next(cars)
-# print(c2)
-# c3 = next(cars)
-# print(c3)
-# c4 = next(cars)
-# print(c4)
-# c5 = next(cars)
-# print(c5)
+c1 = next(cars)
+print(c1)
+c2 = next(cars)
+print(c2)
+c3 = next(cars)
+print(c3)
+c4 = next(cars)
+print(c4)
+c5 = next(cars)
+print(c5)
 
+# 生成器耗盡
 # for car in cars:
 #     print(car)
 # endregion
 
+
 # 5️⃣ yield from 可以把一個「可迭代物件」中的元素依序 yield 出來
 # （可替代：for + yield）
 # region
-# def demo():
-#     nums = [10, 20, 30, 40]
-#     yield from nums
+def demo4():
+    nums = [10, 20, 30, 40]
+    yield from nums
 
 
-# d = demo()
-# r1 = next(d)
-# print(r1)
-# r2 = next(d)
-# print(r2)
-# r3 = next(d)
-# print(r3)
-# r4 = next(d)
-# print(r4)
+d = demo4()
+r1 = next(d)
+print(r1)
+r2 = next(d)
+print(r2)
+r3 = next(d)
+print(r3)
+r4 = next(d)
+print(r4)
 
-# for item in d:
-#     print(item)
+for item in d:
+    print(item)
 # endregion
 
 # 6️⃣ 使用：生成器.send(值)
@@ -186,26 +205,27 @@
 #     print(attr)
 # endregion
 
+
 # 使用生成器實作斐波那契數列
 # region
-def fibo(total):
-    pre = 1
-    cur = 1
+# def fibo(total):
+#     pre = 1
+#     cur = 1
 
-    for index in range(total):
-        if index < 2:
-            yield 1
-        else:
-            value = pre + cur
-            pre = cur
-            cur = value
-            yield value
+#     for index in range(total):
+#         if index < 2:
+#             yield 1
+#         else:
+#             value = pre + cur
+#             pre = cur
+#             cur = value
+#             yield value
 
 
-f1 = fibo(10)
+# f1 = fibo(10)
 
-for item in f1:
-    print(item)
+# for item in f1:
+#     print(item)
 
 # 無論是迭代器還是生成器物件，
 # 都可以用 list、tuple、set 等一次性取得其所有內容
