@@ -2,11 +2,11 @@
 #    因此能顯著降低記憶體佔用。
 # 2. 當資料量很大，且不確定要使用多少結果時，
 #    建議使用迭代器。
+import time
+import tracemalloc
 from colorama import Fore, init
 
 init(autoreset=True)
-
-import tracemalloc
 
 
 # 使用迭代器實作
@@ -57,17 +57,30 @@ def fibo(total):
 
 # 查看記憶體佔用
 tracemalloc.start()
-f1 = Fibo(200000)
+f1 = Fibo(100000)
 m = tracemalloc.get_traced_memory()[1]
 print(f"{Fore.GREEN}迭代器記憶體佔用是：{m / 1024 / 1024}MB")
 
 tracemalloc.start()
-f1 = fibo(200000)
+f1 = fibo(100000)
 m = tracemalloc.get_traced_memory()[1]
 print(f"{Fore.GREEN}非迭代器記憶體佔用是：{m / 1024 / 1024}MB")
 
-f1 = Fibo(200000)
+
+time_1 = time.perf_counter()
+f1 = Fibo(100000)
 for n in f1:
     if n > 100:
         break
     print(n)
+time_2 = time.perf_counter()
+print(f"{Fore.GREEN}使用迭代器花費時間：{time_2 - time_1}秒")
+
+time_1 = time.perf_counter()
+f1 = fibo(100000)
+for n in f1:
+    if n > 100:
+        break
+    print(n)
+time_2 = time.perf_counter()
+print(f"{Fore.GREEN}使用迭代器花費時間：{time_2 - time_1}秒")

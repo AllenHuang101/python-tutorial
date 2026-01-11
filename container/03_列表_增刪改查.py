@@ -3,6 +3,7 @@ from colorama import Fore, init
 init(autoreset=True)
 
 # 新增操作
+print(f"{Fore.YELLOW} =====新增操作=====")
 # 方式一：透過列表的append方法，在列表尾部追加一個元素
 print(f"{Fore.GREEN} =====方式一：透過列表的append方法，在列表尾部追加一個元素=====")
 nums = [10, 20, 30, 40]
@@ -22,12 +23,12 @@ print(
     f"{Fore.GREEN} =====方式三：透過列表的extend方法，將可迭代物件中的內容依次取出，追加到列表尾部====="
 )
 nums = [10, 20, 30, 40]
-nums.extend("尚硅谷")
 nums.extend(range(1, 4))
 nums.extend([70, 80, 90])
 print(nums)
 
 # 删除操作
+print(f"{Fore.YELLOW} =====删除操作=====")
 # 方式一：透過列表的pop方法，刪除指定位置的元素，並返回該元素
 print(
     f"{Fore.GREEN} =====方式一：透過列表的pop方法，刪除指定位置的元素，並返回該元素====="
@@ -60,12 +61,12 @@ del nums[3]
 print(nums)
 
 # 修改操作
-print(f"{Fore.GREEN} ======修改操作====")
+print(f"{Fore.YELLOW} ======修改操作====")
 nums = [10, 20, 10, 40, 50]
 nums[2] = 66
 print(nums)
 
 # 查詢操作
-print(f"{Fore.GREEN} ======查詢操作====")
+print(f"{Fore.YELLOW} ======查詢操作====")
 nums = [10, 20, 10, 40, 50]
 print(nums[3])

@@ -7,14 +7,14 @@ init(autoreset=True)
 # names = ["張三", "李四", "王五"]
 # citys = ("北京", "上海", "深圳")
 # msg = "hello"
-# age = 10
+# age1 = 10
 
 
-# def test():
+# def test1():
 #     pass
 
 
-# for item in age:
+# for item in msg:
 #     print(item)
 # endregion
 

@@ -69,7 +69,7 @@
 # print(result)
 
 # 字串的迴圈遍歷
-msg = 'welcome to atguigu'
+msg = "welcome to atguigu"
 # while迴圈遍歷
 # index = 0
 # while index < len(msg):

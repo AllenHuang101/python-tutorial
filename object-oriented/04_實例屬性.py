@@ -9,9 +9,10 @@ class Person:
         self.age = age
         self.gender = gender
 
+
 # 建立Person類別的實例物件
-p1 = Person('張三', 18, '男')
-p2 = Person('李四', 22, '女')
+p1 = Person("張三", 18, "男")
+p2 = Person("李四", 22, "女")
 
 print(p1.name)
 
