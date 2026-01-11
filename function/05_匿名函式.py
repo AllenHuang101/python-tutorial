@@ -30,6 +30,8 @@ calculate(sub, 30, 10)
 print(Fore.GREEN + "匿名函式")
 add1 = lambda x, y: x + y
 add2 = lambda x: x + x
+
+# 無參數匿名函式
 add3 = lambda: "我是add3函式"
 
 result1 = add1(30, 10)

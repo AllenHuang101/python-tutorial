@@ -10,6 +10,7 @@ init(autoreset=True)
 
 # 方式一：用 map 函式
 nums = [10, 20, 30, 40]
+# map 函式會返回的是一個迭代器，需要用 list() 函式轉換為列表
 result = list(map(lambda n: n * 2, nums))
 print(f"{Fore.GREEN}方式一：用 map 函式", result)
 

@@ -1,7 +1,9 @@
+from pprint import pprint
 from colorama import Fore, init
 from datetime import datetime
 
-init(autoreset=True)  
+init(autoreset=True)
+
 
 # 定義一個Person類別
 class Person:
@@ -27,20 +29,22 @@ class Person:
 
     @staticmethod
     def mask_idcard(idcard):
-        return idcard[:3] + '********' + idcard[-3:]
+        return idcard[:3] + "********" + idcard[-3:]
 
 
 # 驗證一下：靜態方法也是保存在類別身上的
-print(Fore.YELLOW + "驗證1", Person.__dict__)
+print(Fore.YELLOW + "驗證一下：靜態方法也是保存在類別身上的")
+pprint(Person.__dict__)
 
 # 靜態方法需要透過類別去呼叫
+print(Fore.YELLOW + "靜態方法需要透過類別去呼叫")
 result = Person.is_adult(2015)
-print(Fore.YELLOW + "驗證2", result)
-result2 = Person.mask_idcard('212101198802030028')
-print(Fore.YELLOW + "驗證3", result2)
+print(result)
+result2 = Person.mask_idcard("212101198802030028")
+print(result2)
 
 # 注意點：透過實例也能呼叫到靜態方法，但非常不推薦
-p1 = Person('張三', 18, '男')
-res = p1.mask_idcard('A126167889')
+print(Fore.YELLOW + "注意點：透過實例也能呼叫到靜態方法，但非常不推薦")
+p1 = Person("張三", 18, "男")
+res = p1.mask_idcard("A126167889")
 print(res)
-

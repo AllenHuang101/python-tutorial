@@ -27,7 +27,7 @@ is_vip = False
 disscount = 0.8 if is_vip else 1.0
 
 is_login = False
-msg = "歡迎回來！" if is_login else print("哈哈哈")
+msg = "歡迎回來！" if is_login else "請先登入！"
 
 print(eat)
 print(disscount)

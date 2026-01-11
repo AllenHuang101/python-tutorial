@@ -19,12 +19,13 @@ str2 = "atguigu"
 str3 = str1 + str2
 print(str3)
 
-# 錯誤示例
+# 錯誤，list 與 str 無法相加
 list1 = [10, 20, 30, 40]
 str1 = "hello"
 # print(list1 + str1)
 
 # 序列相乘（重複）
+print(Fore.GREEN + "----- 序列相乘 -----")
 list1 = [10, 20, 30, 40]
 list2 = list1 * 3
 print(list2)
