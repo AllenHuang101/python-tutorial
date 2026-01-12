@@ -35,7 +35,7 @@
   ![淺拷貝與深拷貝-8](function/images/12_淺拷貝_深拷貝-8.png)
   ![淺拷貝與深拷貝-9](function/images/12_淺拷貝_深拷貝-9.png)
 - [變數類型註解](function/17_變數類型註解.py)
-- [函式類型註解](function/18_函式註解.py)
+- [函式類型註解](function/18_函式類型註解.py)
 
 #### 物件導向
 
